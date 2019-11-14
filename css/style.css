@@ -7,19 +7,37 @@
 a{
     text-decoration: none;
 }
+body {
+    background: rgb(186,47,89) url("../images/wall.jpg") no-repeat center center;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 kbd{
-    border: 1px solid red;
+    border: 1px solid rgb(132,132,132);
+    box-shadow: 0 2px 3px 0 rgb(177,177,179);
+    border-radius:7px;
     height: 3em;
     width: 3em;
-    display: inline-block;
-    margin: 4px;
+    display: inline-flex;
+    margin: 3px;
+    background-color: rgb(243,243,243);
     text-transform: uppercase;
     position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 kbd > span {
     font-weight: bold;
     font-size: 16px;
+    display: inline-block;
+    margin-top:-15px;
 }
 
 kbd > button {
@@ -31,7 +49,10 @@ kbd > button {
 kbd:hover >button {
     display: inline-block;
     height: 20px;
-    width: 32px;
+    width: 30px;
+    border: 1px solid rgb(132,132,132);
+    background-color: #FFFFFF;
+    z-index: 2;
 }
 kbd > input {
     position: absolute;
@@ -46,15 +67,14 @@ kbd > img {
     left: 4px;
     bottom: 4px;
 }
-main {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+
 .wrapper {
     display: inline-block;
+    padding: 8px;
+    background: linear-gradient(to bottom, #89878c 0%,rgba(255,255,255,.1) 5%,#a5a8ab 100%);
+    border-top: 1px solid rgb(170,171,175);
+    border-radius: 8px;
+    box-shadow: 0 1px 5px 0 rgb(122,123,124);
 }
 
 .wrapper > div:nth-child(3){

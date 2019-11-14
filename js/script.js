@@ -17,7 +17,11 @@ let sites = {
     "n":"nodejs.org/zh-cn",
     "v":"cn.vuejs.org",
     "r":"zh-hans.reactjs.org",
-    "s":"www.mongodb.com/cn"
+    "s":"www.mongodb.com/cn",
+    "z":"www.colorzilla.com",
+    "p":"compressjpeg.com",
+    "h":"https://wallhaven.cc/",
+    "x":"https://www.cssmatic.com/box-shadow"
 };
 let siteImgs = {
     "w":"http://wangdoc.com/assets/icons/favicon-32x32.png",
@@ -30,14 +34,18 @@ let siteImgs = {
     "j":"http://jquery.com/favicon.ico",
     "n":"http://nodejs.org/static/images/favicons/favicon.ico",
     "v":"http://cn.vuejs.org/images/icons/favicon-32x32.png",
-    "r":"http://zh-hans.reactjs.org/icons/icon-48x48.png",
-    "s":"http://www.mongodb.com/assets/images/global/favicon.ico"
+    "r":"https://zh-hans.reactjs.org/favicon.ico",
+    "s":"http://www.mongodb.com/assets/images/global/favicon.ico",
+    "z":"https://www.colorzilla.com/favicon.ico",
+    "p":"https://compressjpeg.com/images/compressjpeg/icon.png",
+    "h":"https://wallhaven.cc/favicon.ico",
+    "x":"https://www.cssmatic.com/img/favicon.png"
 };
 
-//去出localStorage中的websites对应的hash
+//去出localStorage中的websites对应的sites
 let hashInLocalStorage = JSON.parse(localStorage.getItem("websites") || "null");
 if (hashInLocalStorage){
-    hash = hashInLocalStorage;
+    sites = hashInLocalStorage;
 }
 
 
@@ -58,23 +66,35 @@ for (let i=0;i<keys.length;i++) {
             let img = document.createElement("img");
             img.src = siteImgs[keys[i][j]];
             kbd.appendChild(img);
+        }else if(!siteImgs[keys[i][j]]&&sites[keys[i][j]]){
+            let img = document.createElement("img");
+            img.src = "images/undefined.png";
+            img.alt = "icon";
+            kbd.appendChild(img);
         }
         btn.textContent = "编辑";
+
 
         //点击按钮后添加 网址、图片
         btn.onclick = function(){
             let key = this.parentNode.id;
             let temp = prompt("输入一个新网址或者clear所有缓存地址,原本的地址为:"+sites[keys[i][j]]);
-            console.log(temp);
-            let img = document.createElement("img");
-            img.src = "images/undefined.png";
+            let img = null;
+            // console.log(temp);
+            if(temp !== null) {
+                // if()
+                console.log(this.parentElement.lastChild);
+                img = document.createElement("img");
+                img.src = "images/undefined.png";
+            }
             if (temp === "clear"){
                 localStorage.clear();
+                window.location.reload();
             }else if (temp){
                 sites[key] = temp;
                 localStorage.setItem("websites",JSON.stringify(sites));
+                kbd.appendChild(img);
             }
-            kbd.appendChild(img);
         };
         div.appendChild(kbd);
         kbd.appendChild(btn);
