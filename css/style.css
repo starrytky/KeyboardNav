@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+
+a{
+    text-decoration: none;
+}
+kbd{
+    border: 1px solid red;
+    height: 3em;
+    width: 3em;
+    display: inline-block;
+    margin: 4px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+kbd > span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+kbd > button {
+    display: none;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+kbd:hover >button {
+    display: inline-block;
+    height: 20px;
+    width: 32px;
+}
+kbd > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+kbd > img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+}
+main {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.wrapper {
+    display: inline-block;
+}
+
+.wrapper > div:nth-child(3){
+    margin-left: 1em;
+}
+.wrapper > div:last-child{
+    margin-left: 2em;
+}
