@@ -9,6 +9,7 @@ a{
 }
 body {
     background: rgb(186,47,89) url("../images/wall.jpg") no-repeat center center;
+    background-size: cover;
 }
 
 main {
