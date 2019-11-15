@@ -60,18 +60,20 @@ for (let i = 0; i < keys.length; i++) {
         let span = document.createElement("span");
 
         //添加文字，图片
+        let img = document.createElement("img");
         span.textContent = keys[i][j];
         kbd.id = keys[i][j];
         if (siteImgs[keys[i][j]]) {
-            let img = document.createElement("img");
             img.src = siteImgs[keys[i][j]];
             kbd.appendChild(img);
         } else if (!siteImgs[keys[i][j]] && sites[keys[i][j]]) {
-            let img = document.createElement("img");
             img.src = "images/undefined.png";
             img.alt = "icon";
             kbd.appendChild(img);
         }
+        img.onerror = function (e) {
+            e.target.src = "images/undefined.png";
+        };
         btn.textContent = "编辑";
 
 
@@ -111,15 +113,25 @@ document.onkeypress = function (e) {
     }
 };
 
-document.addEventListener("click",function(e){
-    let key = e.target.offsetParent.id;
-    let website = sites[key];
+let kbds = document.getElementById("keyBoardNav");
+document.addEventListener("click", function (e) {
+    let key = e.target.id;
     if (sites[key]) {
-        window.open("http://" + website, "_blank");
+        window.open("http://" + sites[key], "_blank");
     }
 });
+//
+// let kbds = document.getElementById("keyBoardNav");
+// kbds.onclick = function (e) {
+//     let key = e.target.id;
+//     let website = sites[key];
+//     if (sites[key]){
+//         window.open("http://" + website, "_blank");
+//     }
+// };
+
 function stopBubble(e) {
-    if ( e && e.stopPropagation )
+    if (e && e.stopPropagation)
         e.stopPropagation();
     else
         window.event.cancelBubble = true;
