@@ -1,14 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
-a{
+a {
     text-decoration: none;
 }
+
 body {
-    background: rgb(186,47,89) url("../images/wall.jpg") no-repeat center center;
+    background: rgb(186, 47, 89) url("../images/wall.jpg") no-repeat center center;
     background-size: cover;
 }
 
@@ -19,15 +20,16 @@ main {
     align-items: center;
     height: 100vh;
 }
-kbd{
-    border: 1px solid rgb(132,132,132);
-    box-shadow: 0 2px 3px 0 rgb(177,177,179);
-    border-radius:7px;
+
+kbd {
+    border: 1px solid rgb(132, 132, 132);
+    box-shadow: 0 2px 3px 0 rgb(177, 177, 179);
+    border-radius: 7px;
     height: 3em;
     width: 3em;
     display: inline-flex;
     margin: 3px;
-    background-color: rgb(243,243,243);
+    background-color: rgb(243, 243, 243);
     text-transform: uppercase;
     position: relative;
     align-items: center;
@@ -39,7 +41,7 @@ kbd > span {
     font-weight: bold;
     font-size: 16px;
     display: inline-block;
-    margin-top:-15px;
+    margin-top: -15px;
 }
 
 kbd > button {
@@ -48,14 +50,16 @@ kbd > button {
     bottom: 4px;
     right: 4px;
 }
-kbd:hover >button {
+
+kbd:hover > button {
     display: inline-block;
     height: 20px;
     width: 30px;
-    border: 1px solid rgb(132,132,132);
+    border: 1px solid rgb(132, 132, 132);
     background-color: #FFFFFF;
     z-index: 2;
 }
+
 kbd > input {
     position: absolute;
     top: 0;
@@ -73,15 +77,16 @@ kbd > img {
 .wrapper {
     display: inline-block;
     padding: 8px;
-    background: linear-gradient(to bottom, #89878c 0%,rgba(255,255,255,.1) 5%,#a5a8ab 100%);
-    border-top: 1px solid rgb(170,171,175);
+    background: linear-gradient(to bottom, #89878c 0%, rgba(255, 255, 255, .1) 5%, #a5a8ab 100%);
+    border-top: 1px solid rgb(170, 171, 175);
     border-radius: 8px;
-    box-shadow: 0 1px 5px 0 rgb(122,123,124);
+    box-shadow: 0 1px 5px 0 rgb(122, 123, 124);
 }
 
-.wrapper > div:nth-child(3){
+.wrapper > div:nth-child(3) {
     margin-left: 1em;
 }
-.wrapper > div:last-child{
+
+.wrapper > div:last-child {
     margin-left: 2em;
 }
