@@ -1,10 +1,10 @@
+//初始化
 let keys = [
     ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
     ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
     ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
     ['z', 'x', 'c', 'v', 'b', 'n', 'm']
 ];
-
 let sites = {
     'w': 'wangdoc.com',
     "t": "translate.google.cn",
@@ -42,25 +42,25 @@ let siteImgs = {
     "x": "https://www.cssmatic.com/img/favicon.png"
 };
 
-//去出localStorage中的websites对应的sites
-let hashInLocalStorage = JSON.parse(localStorage.getItem("websites") || "null");
+//取出localStorage中的websites对应的sites
+let hashInLocalStorage = getFromLocalStorage("websites")
 if (hashInLocalStorage) {
     sites = hashInLocalStorage;
 }
 
-
+//2，生成键盘
 let kbn = document.getElementById("keyBoardNav");
 
 for (let i = 0; i < keys.length; i++) {
-    let div = document.createElement("div");
+    let div = c("div");
     kbn.appendChild(div);
     for (let j = 0; j < keys[i].length; j++) {
-        let kbd = document.createElement("kbd");
-        let btn = document.createElement("button");
-        let span = document.createElement("span");
+        let kbd = c("kbd");
+        let btn = c("button");
+        let span = c("span");
 
         //添加文字，图片
-        let img = document.createElement("img");
+        let img = c("img");
         span.textContent = keys[i][j];
         kbd.id = keys[i][j];
         if (siteImgs[keys[i][j]]) {
@@ -86,7 +86,7 @@ for (let i = 0; i < keys.length; i++) {
             if (temp !== null) {
                 // if()
                 console.log(this.parentElement.lastChild);
-                img = document.createElement("img");
+                img = c("img");
                 img.src = "images/undefined.png";
             }
             if (temp === "clear") {
@@ -105,19 +105,21 @@ for (let i = 0; i < keys.length; i++) {
     }
 }
 
+//3.监听键盘
 document.onkeypress = function (e) {
     let key = e.key;
     let website = sites[key];
     if (sites[key]) {
-        window.open("http://" + website, "_blank");
+        window.open("https://" + website, "_blank");
     }
 };
 
+//4.监听点击
 let kbds = document.getElementById("keyBoardNav");
 document.addEventListener("click", function (e) {
     let key = e.target.id;
     if (sites[key]) {
-        window.open("http://" + sites[key], "_blank");
+        window.open("https://" + sites[key], "_blank");
     }
 });
 //
@@ -130,6 +132,15 @@ document.addEventListener("click", function (e) {
 //     }
 // };
 
+function getFromLocalStorage(e){
+    return JSON.parse(localStorage.getItem(e) || "null");
+}
+
+function c(tagName){
+    return document.createElement(tagName);
+}
+
+//阻止事件冒泡
 function stopBubble(e) {
     if (e && e.stopPropagation)
         e.stopPropagation();
