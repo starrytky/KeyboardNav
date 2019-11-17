@@ -1,52 +1,8 @@
-//初始化
-let keys = [
-    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
-    ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
-    ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
-    ['z', 'x', 'c', 'v', 'b', 'n', 'm']
-];
-let sites = {
-    'w': 'wangdoc.com',
-    "t": "translate.google.cn",
-    "b": "bitwiser.in/blurt",
-    "c": "tympanus.net/codrops",
-    "d": "dribbble.com",
-    "m": "developer.mozilla.org/zh-CN/docs/Web/JavaScript",
-    "g": "github.com",
-    "j": "jquery.com",
-    "n": "nodejs.org/zh-cn",
-    "v": "cn.vuejs.org",
-    "r": "zh-hans.reactjs.org",
-    "s": "www.mongodb.com/cn",
-    "z": "www.colorzilla.com",
-    "p": "compressjpeg.com",
-    "h": "https://wallhaven.cc/",
-    "x": "https://www.cssmatic.com/box-shadow"
-};
-let siteImgs = {
-    "w": "http://wangdoc.com/assets/icons/favicon-32x32.png",
-    "t": "http://translate.google.cn/favicon.ico",
-    "b": "http://bitwiser.in/favicon.ico",
-    "c": "http://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/themes/codropstheme03/favicons/favicon.ico",
-    "d": "http://cdn.dribbble.com/assets/favicon-63b2904a073c89b52b19aa08cebc16a154bcf83fee8ecc6439968b1e6db569c7.ico",
-    "m": "http://developer.mozilla.org/static/img/favicon32.7f3da72dcea1.png",
-    "g": "http://github.com/favicon.ico",
-    "j": "http://jquery.com/favicon.ico",
-    "n": "http://nodejs.org/static/images/favicons/favicon.ico",
-    "v": "http://cn.vuejs.org/images/icons/favicon-32x32.png",
-    "r": "https://zh-hans.reactjs.org/favicon.ico",
-    "s": "http://www.mongodb.com/assets/images/global/favicon.ico",
-    "z": "https://www.colorzilla.com/favicon.ico",
-    "p": "https://compressjpeg.com/images/compressjpeg/icon.png",
-    "h": "https://wallhaven.cc/favicon.ico",
-    "x": "https://www.cssmatic.com/img/favicon.png"
-};
+let hash = init();
+let keys = hash.keys;
+let sites = hash.sites;
+let siteImgs = hash.siteImgs;
 
-//取出localStorage中的websites对应的sites
-let hashInLocalStorage = getFromLocalStorage("websites")
-if (hashInLocalStorage) {
-    sites = hashInLocalStorage;
-}
 
 //2，生成键盘
 let kbn = document.getElementById("keyBoardNav");
@@ -84,7 +40,6 @@ for (let i = 0; i < keys.length; i++) {
             let img = null;
             // console.log(temp);
             if (temp !== null) {
-                // if()
                 console.log(this.parentElement.lastChild);
                 img = c("img");
                 img.src = "images/undefined.png";
@@ -146,4 +101,61 @@ function stopBubble(e) {
         e.stopPropagation();
     else
         window.event.cancelBubble = true;
+}
+function init(){
+    //初始化
+    let keys = [
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
+        ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+        ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+        ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+    ];
+    let sites = {
+        'w': 'wangdoc.com',
+        "t": "translate.google.cn",
+        "b": "bitwiser.in/blurt",
+        "c": "tympanus.net/codrops",
+        "d": "dribbble.com",
+        "m": "developer.mozilla.org/zh-CN/docs/Web/JavaScript",
+        "g": "github.com",
+        "j": "jquery.com",
+        "n": "nodejs.org/zh-cn",
+        "v": "cn.vuejs.org",
+        "r": "zh-hans.reactjs.org",
+        "s": "www.mongodb.com/cn",
+        "z": "www.colorzilla.com",
+        "p": "compressjpeg.com",
+        "h": "https://wallhaven.cc/",
+        "x": "https://www.cssmatic.com/box-shadow"
+    };
+    let siteImgs = {
+        "w": "http://wangdoc.com/assets/icons/favicon-32x32.png",
+        "t": "http://translate.google.cn/favicon.ico",
+        "b": "http://bitwiser.in/favicon.ico",
+        "c": "http://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/themes/codropstheme03/favicons/favicon.ico",
+        "d": "http://cdn.dribbble.com/assets/favicon-63b2904a073c89b52b19aa08cebc16a154bcf83fee8ecc6439968b1e6db569c7.ico",
+        "m": "http://developer.mozilla.org/static/img/favicon32.7f3da72dcea1.png",
+        "g": "http://github.com/favicon.ico",
+        "j": "http://jquery.com/favicon.ico",
+        "n": "http://nodejs.org/static/images/favicons/favicon.ico",
+        "v": "http://cn.vuejs.org/images/icons/favicon-32x32.png",
+        "r": "https://zh-hans.reactjs.org/favicon.ico",
+        "s": "http://www.mongodb.com/assets/images/global/favicon.ico",
+        "z": "https://www.colorzilla.com/favicon.ico",
+        "p": "https://compressjpeg.com/images/compressjpeg/icon.png",
+        "h": "https://wallhaven.cc/favicon.ico",
+        "x": "https://www.cssmatic.com/img/favicon.png"
+    };
+
+    //取出localStorage中的websites对应的sites
+    let hashInLocalStorage = getFromLocalStorage("websites");
+    if (hashInLocalStorage) {
+        sites = hashInLocalStorage;
+    }
+
+    return {
+        "keys":keys,
+        "sites":sites,
+        "siteImgs":siteImgs
+    };
 }
