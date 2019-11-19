@@ -21,7 +21,7 @@ function init(){
     let sites = {
         'w': 'wangdoc.com',
         "t": "translate.google.cn",
-        "b": "bitwiser.in/blurt",
+        "b": "bootcdn.cn/",
         "c": "tympanus.net/codrops",
         "d": "dribbble.com",
         "m": "developer.mozilla.org/zh-CN/docs/Web/JavaScript",
@@ -39,7 +39,7 @@ function init(){
     let siteImages = {
         "w": "http://wangdoc.com/assets/icons/favicon-32x32.png",
         "t": "http://translate.google.cn/favicon.ico",
-        "b": "http://bitwiser.in/favicon.ico",
+        "b": "https://www.bootcdn.cn/assets/ico/favicon.ico?1573935549448",
         "c": "http://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/themes/codropstheme03/favicons/favicon.ico",
         "d": "http://cdn.dribbble.com/assets/favicon-63b2904a073c89b52b19aa08cebc16a154bcf83fee8ecc6439968b1e6db569c7.ico",
         "m": "http://developer.mozilla.org/static/img/favicon32.7f3da72dcea1.png",
