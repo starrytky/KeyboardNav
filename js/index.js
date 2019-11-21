@@ -34,7 +34,8 @@ function init(){
         "z": "www.colorzilla.com",
         "p": "compressjpeg.com",
         "h": "wallhaven.cc/",
-        "x": "www.cssmatic.com/box-shadow"
+        "x": "www.cssmatic.com/box-shadow",
+        "i": "www.iconfont.cn"
     };
     let siteImages = {
         "w": "http://wangdoc.com/assets/icons/favicon-32x32.png",
@@ -52,7 +53,8 @@ function init(){
         "z": "https://www.colorzilla.com/favicon.ico",
         "p": "https://compressjpeg.com/images/compressjpeg/icon.png",
         "h": "https://wallhaven.cc/favicon.ico",
-        "x": "https://www.cssmatic.com/img/favicon.png"
+        "x": "https://www.cssmatic.com/img/favicon.png",
+        "i": "https://gtms04.alicdn.com/tps/i4/TB1_oz6GVXXXXaFXpXXJDFnIXXX-64-64.ico"
     };
 
     //取出localStorage中的websites对应的sites
